@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>TVET Historical Timeline</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 10px;
+    background: #f4f7fb;
+  }
+  h1 {
+    text-align: center;
+    color: #2c3e50;
+  }
+  .timeline {
+    position: relative;
+    max-width: 700px;
+    margin: 40px auto;
+    padding-left: 40px;
+    border-left: 4px solid #3498db;
+  }
+  .event {
+    position: relative;
+    background: white;
+    margin-bottom: 40px;
+    padding: 15px 20px 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+  }
+  .event::before {
+    content: "";
+    position: absolute;
+    top: 30px;
+    left: -30px;
+    width: 18px;
+    height: 18px;
+    background: #3498db;
+    border-radius: 50%;
+    border: 4px solid white;
+  }
+  .date {
+    color: #2980b9;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 6px;
+  }
+  .title {
+    font-size: 1.3em;
+    color: #34495e;
+    margin: 0 0 10px 0;
+  }
+  .description {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 10px;
+    text-align: left;
+    line-height: 1.6;
+  }
+  .media {
+    margin-top: 10px;
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+  }
+  .media img {
+    max-width: 140px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  .media-text {
+    max-width: 500px;
+    font-size: 0.9em;
+    color: #666;
+  }
+  .media-caption {
+    font-style: italic;
+  }
+  .media-credit {
+    font-size: 0.8em;
+    color: #999;
+  }
+  iframe {
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    max-width: 100%;
+    height: 200px;
+  }
+  a {
+    color: #2980b9;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  .footer {
+    margin-top: 40px;
+    text-align: center;
+    font-style: italic;
+    color: #777;
+  }
+</style>
+</head>
+<body>
+
+<h1>Enhanced TVET Historical Timeline in Kenya and the World</h1>
+
+<div class="timeline" id="timeline"></div>
+
+<div class="footer">Timeline and content prepared by Kingstone.</div>
+
+<script>
+const timelineData = [
+  {
+    date: "Before 1895",
+    title: "The Non-Formal Era",
+    description: "During this era, skills were passed down informally through apprenticeships. In Europe, craft guilds established standards to maintain quality, while in Kenya, traditional skills such as iron smelting and weaving were taught within families and communities, relying on practical, on-the-job training that met daily life needs.",
+    media: {
+      thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Apprenticeship.jpg/1280px-Apprenticeship.jpg",
+      caption: "A craftsman demonstrating traditional skills.",
+      link: "https://en.wikipedia.org/wiki/Apprenticeship",
+      credit: "Wikimedia Commons",
+      video: null
+    }
+  },
+  {
+    date: "After 1895",
+    title: "Industrialization & Formal Education",
+    description: "The Industrial Revolution introduced complex machinery requiring specialized technical skills. This shift prompted the rise of technical schools globally to prepare workers quickly. In Kenya, colonial infrastructure projects, like the Kenya-Uganda railway, created the need for trained artisans, leading colonial authorities to establish technical schools focusing on artisan training to support development.",
+    media: {
+      thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Powerloom_weaving_in_1835.jpg/1280px-Powerloom_weaving_in_1835.jpg",
+      caption: "Steam engine depicting industrial revolution era technology.",
+      link: "https://en.wikipedia.org/wiki/Industrial_Revolution",
+      credit: "Wikimedia Commons",
+        video: "https://www.youtube.com/embed/zhL5DCizj5c"
+    }
+  },
+  {
+    date: "Post-2000: Modern Shift",
+    title: "Competency-Based Training (CBT) Emerges",
+    description: "Recognizing gaps between school curricula and labor market needs, training evolved towards competency-based approaches focused on practical abilities demanded by industries. This shift enhanced employability by ensuring graduates possess job-ready skills aligned with technological and economic trends worldwide.",
+    media: {
+      thumbnail: "https://www.fingent.com/wp-content/uploads/sites/4/2017/02/how-to-create-a-competencybased-training-program.jpg",
+      caption: "Competency-Based Training in technical education.",
+      link: "https://unevoc.unesco.org/home/Curriculum+development",
+      credit: "Fingent",
+      video: null
+    }
+  },
+  {
+    date: "Kenya Colonial Era (1895-1963)",
+    title: "Technical Schools Established",
+    description: "Colonial efforts concentrated on building technical schools aimed at training support staff required for expansive infrastructure projects. However, these schools catered primarily to lower-level artisan roles with minimal advanced technical skills, reflecting colonial priorities rather than sustainable local capacity building.",
+    media: {
+      thumbnail: "https://ekitibwakyabuganda.wordpress.com/wp-content/uploads/2013/02/rail.jpg",
+      caption: "Kenya-Uganda railway under construction during colonial period.",
+      link: "https://en.wikipedia.org/wiki/Kenyan_Uganda_Railway",
+      credit: "Ekitibwa Kya Buganda Archives",
+      video: null
+    }
+  },
+  {
+    date: "Post-Independence Kenya (1963 onwards)",
+    title: "TVET as Economic Development Tool",
+    description: "After independence, Kenya prioritized replacing foreign expertise with locally trained skilled workers. Vocational schools expanded rapidly to meet demand for national development with increased government support focused on technical self-reliance and socio-economic transformation.",
+    media: {
+      thumbnail: "https://images.squarespace-cdn.com/content/v1/665d881bda52dc4de2ae1648/1717405731312-M8UMXXLQTGFLVNMMGHCI/DSC_2230.jpg?format=500w",
+      caption: "Vocational training in Kenya after independence.",
+      link: "https://www.kenyaplex.com/news/archives/6165",
+      credit: "Squarespace CDN",
+      video: null
+    }
+  },
+  {
+    date: "2013",
+    title: "TVET Act and Reforms",
+    description: "The TVET Act of 2013 marked a critical turning point in Kenya, establishing regulatory frameworks to unify governance under the TVET Authority, modernize curricula towards competency-based approaches, and promote TVET as a dignified training pathway addressing fragmented previous systems to improve quality and alignment with industry needs.",
+    media: {
+      thumbnail: "https://website-assets.studocu.com/img/document_thumbnails/9edef7fd423fb78147c9b1c8628d4972/thumb_1200_1698.png",
+      caption: "Cover of Kenya TVET Act 2013 document.",
+      link: "http://kenyalaw.org/kl/fileadmin/pdfdownloads/LegalNotices/TvetaActNO29of2013.pdf",
+      credit: "Kenya Law Reports",
+      video: "https://www.youtube.com/embed/nP1bJU8Z9-c"
+    }
+  },
+  {
+    date: "Modern Kenya TVET Challenges",
+    title: "Ongoing Challenges and Initiatives",
+    description: "Despite reforms, challenges persist including public perception of TVET as for academic underachievers, fragmented funding sources, and governance complexities. The government continues investing in awareness campaigns, funding increases, and policy refinements to strengthen TVET's vital role in youth employment and economic growth.",
+    media: {
+      thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVc_YMpHlu1xocEeAS_6S2mVd4xseC5rsRWp1KzV1xoFEEGOiv5O2wFp0&s=10",
+      caption: "Kenya TVET Authority promoting modern technical education.",
+      link: "https://www.tvetcouncil.go.ke",
+      credit: "Kenya TVET Authority",
+      video: null
+    }
+  },
+  {
+    date: "Conclusion",
+    title: "Evolution of TVET",
+    description: "TVET has evolved from informal traditional apprenticeships rooted in community livelihoods to a structured, competency-based system regulated to meet industrial and economic demands. Kenya's legislative and policy reforms reflect a national commitment to using TVET as a cornerstone for sustainable development and inclusive growth, preparing a skilled workforce fit for modern challenges.",
+    media: {
+      thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/OAC_Vocational_Education%2C_1922_%285857905487%29.jpg/1280px-OAC_Vocational_Education%2C_1922_%285857905487%29.jpg",
+      caption: "Symbolizing education and skills development.",
+      link: "https://en.wikipedia.org/wiki/Technical_and_vocational_education_and_training",
+      credit: "Wikimedia Commons",
+      video: null
+    }
+  }
+];
+
+function renderTimeline() {
+  const container = document.getElementById('timeline');
+  timelineData.forEach(event => {
+    const eventDiv = document.createElement('div');
+    eventDiv.className = 'event';
+
+    eventDiv.innerHTML = `
+      <div class="date">${event.date}</div>
+      <div class="title">${event.title}</div>
+      <div class="description">${event.description}</div>
+      <div class="media">
+        <a href="${event.media.link}" target="_blank" rel="noopener noreferrer">
+          <img src="${event.media.thumbnail}" alt="${event.media.caption}">
+        </a>
+        <div class="media-text">
+          <div class="media-caption">${event.media.caption}</div>
+          <a href="${event.media.link}" target="_blank" rel="noopener noreferrer">Learn more</a><br>
+          <div class="media-credit">Credit: ${event.media.credit}</div>
+        </div>
+      </div>
+      ${event.media.video ? `<iframe src="${event.media.video}" frameborder="0" allowfullscreen></iframe>` : ''}
+    `;
+
+    container.appendChild(eventDiv);
+  });
+}
+
+renderTimeline();
+</script>
+
+</body>
+</html>
